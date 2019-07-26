@@ -62,6 +62,7 @@ def get_episodes(params):
         e.airdate = episode['customFields']['start_date_act']
         e.page = int(page)
         e.id = episode['id']
+        e.hlsurl = episode['HLSURL']
         e.total_episodes = int(data['total_count'])
         if e.total_episodes > 30:
             e.query = urllib.quote(params['query'])
