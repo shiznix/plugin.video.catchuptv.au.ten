@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+  <category label="32001">
+    <setting label="32035" type="action" action="RunPlugin(plugin://plugin.video.catchuptv.au.ten/?action=sendreport)"/>
+  </category>
+</settings>
