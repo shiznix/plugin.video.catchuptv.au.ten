@@ -1,10 +1,9 @@
 import config
 import sys
+import session
+import utils
 import xbmcgui
 import xbmcplugin
-
-from aussieaddonscommon import session
-from aussieaddonscommon import utils
 
 _url = sys.argv[0]
 _handle = int(sys.argv[1])
@@ -15,8 +14,7 @@ def play_video(params):
     """
     try:
         with session.Session() as sess:
-            url = (params['hlsurl'] + '&format=m3u8')
-            utils.log("M3U8 URL: %s" % url)
+            url = params['hlsurl'] + '|User-Agent=%s' % config.USER_AGENT
         play_item = xbmcgui.ListItem(path=url)
         xbmcplugin.setResolvedUrl(_handle, True, play_item)
     except Exception:
